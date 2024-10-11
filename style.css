@@ -42,7 +42,7 @@
   
   ::-webkit-scrollbar-thumb {
     border-radius: 12px;
-    background: linear-gradient(135deg, #f57308, #fff, rgb(11, 242, 7));
+    background: linear-gradient(135deg, #0021f5, #fff, rgb(250, 0, 0));
   }
   
   ::-webkit-scrollbar-thumb:hover {
@@ -251,7 +251,7 @@
   /* Linear Gradient */
   .home .home-content .text-3 span {
     color: #1e3551;
-    background: linear-gradient(135deg, #020ef8, #fff, rgb(13, 249, 1));
+    background: linear-gradient(135deg, #000dff, #048787, rgb(249, 79, 1));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 500;
@@ -313,7 +313,7 @@
   /* Linear Gradiant */
   .about .about-content .right .text span {
     /* color: #1e3551; */
-    background: linear-gradient(135deg, #0105f1, #fff, rgb(0, 255, 26));
+    background: linear-gradient(135deg, #0105f1, #048787, rgb(255, 85, 0));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -384,7 +384,7 @@
   .services .serv-content .card i {
     font-size: 50px;
     color: #888e8d;
-    background: linear-gradient(135deg, #0025f9, #ffffff, rgb(19, 250, 2));
+    background: linear-gradient(135deg, #0025f9, #048787, rgb(250, 114, 2));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: color 0.3s ease;
@@ -941,31 +941,84 @@
 
 
 
-
+/* Skills Representation */
 
   .skill-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
-    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px;
+    margin-top: 20px;
   }
-  
+
   .skill-item {
-    background-color: #f2f2f2; /* Light gray background */
-    padding: 10px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transitions */
+    display: flex;
+    align-items: center;
+    position: relative;
   }
-  
-  .skill-item:hover {
-    transform: translateY(-5px); /* Slight lift on hover */
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); /* More prominent shadow */
+
+  .skill-name {
+    font-size: 16px;
+    font-weight: bold;
+    flex: 1;
+    padding-right: 10px;
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease-in-out;
   }
-  
-  
+
+  .skill-item:hover .skill-name {
+    color: #66ff99;
+  }
+
   .skill-bar {
-    height: 20px;
-    background-color: #4CAF50; /* Green progress bar */
+    flex: 3;
+    background: #e0e0e0;
     border-radius: 5px;
-    margin-top: 5px;
+    height: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skill-bar::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    border-radius: 5px;
+    width: 0;
+    transition: width 1s ease-in-out;
+  }
+
+  /* Animated bar fill */
+  .skill-item:hover .skill-bar::before {
+    width: var(--skill-level);
+  }
+
+  /* Icons for each skill */
+  .skill-item::before {
+    content: attr(data-icon);
+    font-size: 18px;
+    margin-right: 10px;
+    color: #007acc;
+  }
+
+  /* Tooltip styles */
+  .skill-tooltip {
+    position: absolute;
+    bottom: -25px;
+    left: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out;
+    white-space: nowrap;
+  }
+
+  .skill-item:hover .skill-tooltip {
+    opacity: 1;
+    visibility: visible;
   }

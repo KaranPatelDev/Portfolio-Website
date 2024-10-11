@@ -31,13 +31,11 @@
         </div>
       </nav>
 
-      <!-- Home -->
+            <!-- Home -->
       <section class="home" id="home" style="position: relative; overflow: hidden;">
-        <div id="video-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden;">
-          <video id="background-video" autoplay muted loop style="width: 100%; height: 100%; object-fit: cover; filter: blur(10px);">
-            <!-- Video sources will be set by JavaScript based on the theme -->
-            <source src="path-to-light-mode-video.mp4" type="video/mp4" id="video-source">
-          </video>
+        <div id="animation-container" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;">
+          <!-- Embed the animation HTML file -->
+          <iframe src="Animation/Fly through - wormhole-main/index.html" style="width: 100%; height: 100%; border: none; overflow: hidden;"></iframe>
         </div>
         <div class="max-width" style="position: relative; z-index: 1;">
           <div class="home-content">
@@ -49,29 +47,6 @@
         </div>
       </section>
 
-      <script>
-        // Function to change video based on the color scheme
-        function updateVideoBasedOnTheme() {
-          const videoSource = document.getElementById("video-source");
-          const isLightMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-          if (isLightMode) {
-            videoSource.src = "video/bg3.mp4";
-          }else{
-            videoSource.src = "video/bg3.mp4";
-          }
-          // Load and play the video
-          const video = document.getElementById("background-video");
-          video.load();
-          video.play();
-        }
-
-        // Run the function when the page loads
-        window.onload = updateVideoBasedOnTheme;
-
-        // Listen for changes in color scheme preference
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateVideoBasedOnTheme);
-      </script>
 
 
 
@@ -125,57 +100,66 @@
               <p>The Code Theory · Self-employed<br>
                 Sep 2024 - Present · 2 mos<br>
                 Vadodara, Gujarat, India · On-site</p>
-            </div>            
-            <div class="column right">
+            </div>
+            <div class="container">
               <div class="skill-grid">
-                <div class="skill-item">
+                <div class="skill-item" data-icon="🐍" style="--skill-level: 90%;">
                   <span class="skill-name">Python</span>
-                  <div class="skill-bar" style="width: 90%;"></div>
+                  <div class="skill-bar advanced"></div>
+                  <span class="skill-tooltip">Advanced (90%)</span>
                 </div>
-                <div class="skill-item">
+                <div class="skill-item" data-icon="🔍" style="--skill-level: 50%;">
                   <span class="skill-name">Open-CV Python</span>
-                  <div class="skill-bar" style="width: 50%;"></div>
+                  <div class="skill-bar intermediate"></div>
+                  <span class="skill-tooltip">Intermediate (50%)</span>
                 </div>
-                <div class="skill-item">
+                <div class="skill-item" data-icon="🌐" style="--skill-level: 90%;">
                   <span class="skill-name">HTML</span>
-                  <div class="skill-bar" style="width: 90%;"></div>
+                  <div class="skill-bar advanced"></div>
+                  <span class="skill-tooltip">Advanced (90%)</span>
                 </div>
-                <div class="skill-item">
+                <div class="skill-item" data-icon="🎨" style="--skill-level: 60%;">
                   <span class="skill-name">CSS</span>
-                  <div class="skill-bar" style="width: 60%;"></div>
+                  <div class="skill-bar intermediate"></div>
+                  <span class="skill-tooltip">Intermediate (60%)</span>
                 </div>
-                <div class="skill-item">
+                <div class="skill-item" data-icon="💻" style="--skill-level: 50%;">
                   <span class="skill-name">JavaScript</span>
-                  <div class="skill-bar" style="width: 50%;"></div>
+                  <div class="skill-bar intermediate"></div>
+                  <span class="skill-tooltip">Intermediate (50%)</span>
                 </div>
-                <div class="skill-item">
+                <div class="skill-item" data-icon="☕" style="--skill-level: 60%;">
                   <span class="skill-name">Java</span>
-                  <div class="skill-bar" style="width: 60%;"></div>
+                  <div class="skill-bar intermediate"></div>
+                  <span class="skill-tooltip">Intermediate (60%)</span>
                 </div>
-                <div class="skill-item">
+                <div class="skill-item" data-icon="⚛️" style="--skill-level: 50%;">
                   <span class="skill-name">React</span>
-                  <div class="skill-bar" style="width: 50%;"></div>
+                  <div class="skill-bar intermediate"></div>
+                  <span class="skill-tooltip">Begineer (30%)</span>
                 </div>
-                <div class="skill-item">
+                <div class="skill-item" data-icon="🟢" style="--skill-level: 60%;">
                   <span class="skill-name">NodeJs</span>
-                  <div class="skill-bar" style="width: 60%;"></div>
+                  <div class="skill-bar intermediate"></div>
+                  <span class="skill-tooltip">Intermediate (60%)</span>
                 </div>
-                <div class="skill-item">
+                <div class="skill-item" data-icon="📊" style="--skill-level: 90%;">
                   <span class="skill-name">PowerBI</span>
-                  <div class="skill-bar" style="width: 90%;"></div>
+                  <div class="skill-bar advanced"></div>
+                  <span class="skill-tooltip">Advanced (90%)</span>
                 </div>
-                <div class="skill-item">
+                <div class="skill-item" data-icon="💾" style="--skill-level: 70%;">
                   <span class="skill-name">SQL</span>
-                  <div class="skill-bar" style="width: 70%;"></div>
+                  <div class="skill-bar advanced"></div>
+                  <span class="skill-tooltip">Intermediate (70%)</span>
                 </div>
-                <div class="skill-item">
+                <div class="skill-item" data-icon="📉" style="--skill-level: 70%;">
                   <span class="skill-name">Data Analytics</span>
-                  <div class="skill-bar" style="width: 70%;"></div>
+                  <div class="skill-bar advanced"></div>
+                  <span class="skill-tooltip">Intermediate (70%)</span>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
       </section>
       
 
@@ -224,6 +208,16 @@
                 <p>It is a program made in Python and Open-CV through which you can Control Volume and Brightness</br>
                 Note : I am currently working on this project so more features will be added shortly. </br>
                 <a href="#home">Github Link</a>
+                </p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="box">
+                <img src="img/portfolio.png" alt="">
+                <div class="text">Personal Portfolio Website</div>
+                <p></br>
+                <a href="https://github.com/karanop001018/Portfolio-Website">Github Link</a></br></br>
+                <a href="">Live Demo</a>
                 </p>
               </div>
             </div>
