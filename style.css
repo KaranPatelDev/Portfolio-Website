@@ -139,7 +139,7 @@
   
   /*  Nav Logo Span Linear-Gradient  */
   .navbar .logo a span {
-    background: linear-gradient(135deg, #02f202, #f56105, rgb(21, 2, 224));
+    background: linear-gradient(135deg, #f0f2f0, #f4f2f0, rgb(245, 244, 247));
     -webkit-background-clip: text;
     background-clip: text;
     background-clip: text;
